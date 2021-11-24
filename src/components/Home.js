@@ -51,7 +51,6 @@ function Home() {
                 title="Accessories"
                 description="Money-back guarantee"
                 leftButtonText="Order Now"
-                rightButtonText="Learn More"
                 backgroundImage="accessories.jpg"
             />
 
