@@ -45,7 +45,8 @@ const ItemText = styled.div`
 
 const ButtonGroup = styled.div`
     display: flex;
-    margin-bottom: 30px;
+    opacity: 0.65;
+    color: black;
 `
 
 const LeftButton = styled.div`
