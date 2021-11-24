@@ -25,3 +25,5 @@ yarn-error.log*
 /.idea/runConfigurations.xml
 /.idea/tesla_clone.iml
 /.idea/vcs.xml
+/.idea/misc.xml
+/.idea/inspectionProfiles/Project_Default.xml
