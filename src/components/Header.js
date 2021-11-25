@@ -5,15 +5,22 @@ import MenuIcon from '@mui/icons-material/Menu';
 function Header() {
     return (
         <Container>
-            <a>
+            <a href="#">
                 <img src="/images/logo.svg" alt="tesla" />
             </a>
             <Menu>
-                <p><a href="#">Model S</a></p>
-                <p><a href="#">Model 3</a></p>
-                <p><a href="#">Model X</a></p>
-                <p><a href="#">Model Y</a></p>
+                <a href="#">Model S</a>
+                <a href="#">Model 3</a>
+                <a href="#">Model X</a>
+                <a href="#">Model Y</a>
             </Menu>
+            <RightMenu>
+                <a href="#">Shop</a>
+                <a href="#">Tesla Account</a>
+                <CustomMenu>
+
+                </CustomMenu>
+            </RightMenu>
         </Container>
     )
 }
@@ -29,6 +36,7 @@ const Container = styled.div`
     top: 0;
     left: 0;
     right: 0;
+    justify-content: space-between;
 `
 
 const Menu = styled.div`
@@ -37,10 +45,28 @@ const Menu = styled.div`
     flex: 1;
     justify-content: center;
     
-    p {
+    a {
         font-weight: 600;
         text-transform: uppercase;
         padding: 0 10px;
         flex-wrap: nowrap;
     }
+    @media(max-width: 768px) {
+        display: none;
+    }
+`
+
+const RightMenu = styled.div`
+    display: flex;
+    align-items: center;
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 10px;
+    }
+`
+
+const CustomMenu = styled(MenuIcon)`
+    cursor: pointer;
+    
 `
