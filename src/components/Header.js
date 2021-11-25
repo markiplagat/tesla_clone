@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 function Header() {
+    const [openBurger, setOpenBurger] = useState(false);
     return (
         <Container>
             <a href="#">
@@ -18,11 +19,11 @@ function Header() {
             <RightMenu>
                 <a href="#">Shop</a>
                 <a href="#">Tesla Account</a>
-                <CustomMenu />
+                <CustomMenu onClick = {() => setOpenBurger(true)} />
             </RightMenu>
-            <BurgerNav>
+            <BurgerNav show={openBurger}>
                 <CloseWrapper>
-                    <CustomCloseButton />
+                    <CustomCloseButton  onClick = {() => setOpenBurger(false)}/>
                 </CloseWrapper>
                 <li><a href="#">Existing Inventory</a></li>
                 <li><a href="#">Used Inventory</a></li>
@@ -95,6 +96,8 @@ const BurgerNav = styled.div`
     flex-direction: column;
     list-style: none;
     text-align: start;
+    transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
+    transition: transform 0.2s;
     li {
         padding: 15px 0;
         border-bottom: 1px solid rgba(0, 0, 0, .2);
